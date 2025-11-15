@@ -20,11 +20,14 @@ const Register = ({ loadUser }) => {
     setError(""); // Clear any previous errors
 
     try {
-      const response = await fetch("https://smart-brain-be-8zhu.onrender.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://smart-brain-be-8zhu.onrender.com/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
       console.log("Server response:", data);
