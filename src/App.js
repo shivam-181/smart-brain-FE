@@ -58,7 +58,7 @@ class Home extends Component {
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
 
-    fetch("https://smart-brain-be-8zhu.onrender.com", {
+    fetch("https://smart-brain-be-8zhu.onrender.com/clarifai", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ imageUrl: this.state.input }),
@@ -75,7 +75,7 @@ class Home extends Component {
         }
 
         if (this.props.user?.id) {
-          fetch("https://smart-brain-be-8zhu.onrender.com", {
+          fetch("https://smart-brain-be-8zhu.onrender.com/image", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ id: this.props.user.id }),
