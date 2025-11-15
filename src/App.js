@@ -171,12 +171,8 @@ class App extends Component {
       if (storedUser) {
         this.setState({ user: JSON.parse(storedUser) });
       }
-
-      const response = await fetch("https://smart-brain-be-8zhu.onrender.com");
-      const data = await response.json();
-      console.log("Backend Response:", data);
     } catch (error) {
-      console.error("Error fetching backend data:", error);
+      console.error("Error loading user from localStorage:", error);
     }
   }
 
